@@ -102,8 +102,8 @@ em { font-style: italic; }
   backdrop-filter: blur(10px);
 }
 
-.topbar__logo { display: block; width: 76px; }
-@media (min-width: 768px) { .topbar__logo { width: 96px; } }
+.topbar__logo { display: block; width: 96px; }
+@media (min-width: 768px) { .topbar__logo { width: 128px; } }
 
 .topbar__age {
   font-weight: 700;
@@ -121,8 +121,8 @@ em { font-style: italic; }
   transform-box: fill-box;
   transform-origin: center;
 }
-.nen-logo.is-blinking .nen-logo__sclera circle { animation: logo-blink .22s ease-in-out; }
-.nen-logo.is-blinking .nen-logo__pupil { animation: logo-blink-pupil .22s ease-in-out; }
+.nen-logo.is-blinking .nen-logo__sclera circle { animation: logo-blink .34s ease-in-out; }
+.nen-logo.is-blinking .nen-logo__pupil { animation: logo-blink-pupil .34s ease-in-out; }
 
 @keyframes logo-blink { 50% { transform: scaleY(.05); } }
 @keyframes logo-blink-pupil { 50% { opacity: 0; } }
@@ -185,12 +185,12 @@ em { font-style: italic; }
 
 .hero {
   position: relative;
-  padding-top: 88px;
+  padding-top: 104px;
   padding-bottom: 60px;
   overflow: hidden;
   isolation: isolate;
 }
-@media (min-width: 768px) { .hero { padding-top: 112px; } }
+@media (min-width: 768px) { .hero { padding-top: 136px; } }
 
 .hero__text { position: relative; z-index: 3; pointer-events: none; }
 

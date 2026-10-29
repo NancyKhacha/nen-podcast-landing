@@ -18,8 +18,7 @@ s = s.replace('</head>\n<body>\n', '').replace('</body>\n</html>\n', '').replace
 s = re.sub(r'<meta charset="utf-8">\n<meta name="viewport"[^>]*>\n', '', s)
 s = re.sub(r'<meta (property="og:|name="twitter:card")[^>]*>\n', '', s)
 s = re.sub(r'<link rel="icon"[^>]*>\n', '', s)
-s = s.replace('<title>Нет, это ненормально — тру-крайм-подкаст НЭН</title>',
-              '<title>Нет, это ненормально</title>\n<script>document.documentElement.lang = "ru";</script>')
+s = re.sub(r'<title>.*?</title>', '<title>Нет, это ненормально</title>\n<script>document.documentElement.lang = "ru";</script>', s)
 
 
 def play(m):

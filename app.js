@@ -114,7 +114,7 @@
     logos.forEach((logo) => {
       const blink = () => {
         logo.svg.classList.add('is-blinking');
-        setTimeout(() => logo.svg.classList.remove('is-blinking'), 240);
+        setTimeout(() => logo.svg.classList.remove('is-blinking'), 360);
         setTimeout(blink, rand(2600, 7000));
       };
       setTimeout(blink, rand(1500, 4000));
