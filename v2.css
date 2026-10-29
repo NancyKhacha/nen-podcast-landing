@@ -1,0 +1,202 @@
+/* The second edition: a title sequence and a physical book of five stories. */
+.v2{--v2-gutter:clamp(22px,4.5vw,76px)}
+.v2 .site-header{height:86px;position:relative;z-index:30;border-bottom:0;padding-inline:var(--v2-gutter);max-width:none;background:transparent}
+.v2 .hero{display:block;position:relative;max-width:none;height:calc(100svh - 30px);min-height:740px;padding:22px var(--v2-gutter) 0;overflow:hidden;isolation:isolate}
+.v2 .hero-copy{position:relative;z-index:5;max-width:none;pointer-events:none}
+.hero-viewport,.story-cover-scene{display:contents}
+.v2 .hero-kicker{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--paper);margin-bottom:24px;max-width:none}
+.v2 .hero h1{font-size:clamp(95px,14.8vw,210px);font-weight:900;line-height:.86;letter-spacing:-.04em;margin:0;transform-origin:15% 50%;will-change:transform}
+.v2 .hero h1 span{font-size:clamp(60px,9.6vw,154px);line-height:.98;letter-spacing:-.035em;color:var(--orange);padding:8px 10px 12px 0;background:var(--ink);width:fit-content;clip-path:var(--edge);animation:title-rip 1.1s cubic-bezier(.16,1,.3,1) both}
+.v2 .hero-bottom{position:absolute;top:clamp(335px,29vw,420px);left:0;pointer-events:auto;width:min(39vw,460px)}
+.v2 .hero-subtitle{margin-top:0;font-size:clamp(19px,1.65vw,25px);max-width:28ch;line-height:1.45;text-wrap:pretty}
+.v2 .hero-actions{margin-top:27px;gap:22px;align-items:flex-start;flex-direction:column}
+.v2 .hero .button{font-size:20px;padding:17px 26px;min-height:64px}
+.v2 .hero .text-button{font-size:16px}
+.hero-scene{position:absolute;z-index:2;width:min(72vw,1150px);aspect-ratio:8/5;bottom:0;right:-3vw;overflow:hidden;transform-origin:28% 55%;will-change:transform;mask-image:linear-gradient(to right,transparent 0,#000 4%,#000 97%,transparent 100%)}
+.hero-scene img{width:100%;height:100%;object-fit:cover;object-position:50% 100%;animation:scene-arrives 1.25s cubic-bezier(.16,1,.3,1) both}
+.scene-disc{position:absolute;width:43vw;aspect-ratio:1;border-radius:50%;bottom:10%;right:12%;background:var(--orange);z-index:0}
+.paper-rift{position:absolute;left:-2%;bottom:-1px;width:104%;height:60px;z-index:7;pointer-events:none}
+.paper-rift>div{position:absolute;width:53%;height:100%;background:var(--paper);clip-path:var(--edge);will-change:transform}
+.rift-left{left:0;transform:rotate(2deg)}.rift-right{right:0;transform:rotate(-3deg)}
+.v2 .hero-down{left:auto;right:var(--v2-gutter);bottom:78px;z-index:10;padding:8px 14px;background:var(--ink);color:var(--paper);font-size:13px}
+@keyframes title-rip{from{clip-path:polygon(0 0,0 0,0 100%,0 100%);transform:translateX(-2%)}to{clip-path:var(--edge);transform:translateX(0)}}
+@keyframes scene-arrives{from{transform:translateY(8%) scale(1.06)}to{transform:translateY(0) scale(1)}}
+.v2 .about{position:relative;max-width:none;padding:100px var(--v2-gutter) 120px;gap:clamp(45px,8vw,140px);background:var(--paper);color:var(--ink);border:0;overflow:hidden}
+.v2 .about h2{color:var(--ink);font-size:20px;text-transform:uppercase;letter-spacing:.05em}
+.v2 .quote{background:var(--orange);font-size:clamp(30px,3.3vw,50px);font-weight:800;transform:rotate(-2deg);padding:28px 30px 36px}
+.v2 .about-body{font-size:21px;font-weight:450;line-height:1.65;align-self:center}
+.v2 .audio-player{margin-top:45px}.v2 .audio-label span:last-child{color:#514a3c}.v2 .round-play{background:var(--ink);color:var(--paper)}.v2 .round-play:hover{background:var(--orange);color:var(--ink)}
+.v2 .audio-error{color:var(--ink)}.v2 .waveform:focus-within{outline-color:var(--ink)}
+.v2 .episodes{padding:0;border:0;max-width:none;margin:0;position:relative}
+.episodes-shell{display:block;position:relative}
+.episode-theatre{position:relative;padding:65px var(--v2-gutter) 30px;overflow:hidden}
+.episode-theatre h2{font-size:clamp(34px,4vw,56px);font-weight:750;letter-spacing:-.03em}
+.story-jumps{display:flex;gap:15px;margin-top:22px;position:relative;z-index:7}
+.story-jump{font-weight:700;font-size:22px;text-decoration:none;color:var(--paper);padding:6px 10px;border-bottom:2px solid transparent;transition:none}
+.story-jump[aria-current=true]{color:var(--orange);border-color:var(--orange)}.story-jump:hover{color:var(--lilac)}.story-jump[aria-current=true]:hover{color:var(--orange)}
+.book-stage,.book-disc,.theatre-hint{display:none}
+.story-page{position:relative;background:var(--paper);color:var(--ink);padding:65px var(--v2-gutter) 75px;scroll-margin-top:0;overflow:clip;isolation:isolate}
+.story-page:nth-child(2n){background:#e4d6bc}.story-page:nth-child(3){background:#d8c8e9}
+.story-content{position:relative;z-index:2;max-width:65ch;margin-inline:auto}
+.story-number{display:block;font-size:clamp(100px,14vw,210px);line-height:.75;font-weight:850;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1px #a97649;opacity:.6;position:absolute;right:0;top:-45px;z-index:-1;pointer-events:none}
+.story-page:nth-child(3) .story-number{-webkit-text-stroke-color:#71588e}
+.story-page .episode-meta{margin-bottom:24px;font-size:15px}.story-page .episode-meta span:first-child{color:var(--ink)}.story-page .episode-meta span:last-child{color:#514a3c}
+.story-page h3{font-size:clamp(35px,3.8vw,62px);line-height:1.02;margin-bottom:27px;font-weight:850}
+.story-page .synopsis{font-size:20px;line-height:1.6;font-weight:450;max-width:65ch}
+.story-page .button{margin-top:30px;background:var(--ink);color:var(--paper);gap:30px;min-height:62px;font-size:20px}
+.story-page .button svg{color:var(--orange)}.story-page .button:hover{background:var(--orange);color:var(--ink)}.story-page .button:hover svg{color:var(--ink)}
+.story-page .button:focus-visible{box-shadow:inset 0 0 0 4px var(--paper),inset 0 0 0 7px var(--ink)}
+.story-mobile-cover{max-width:530px;margin:0 auto 55px;transform:rotate(-3deg);transform-origin:10% 50%;will-change:transform}.story-mobile-cover img{width:100%;clip-path:var(--edge)}
+@media(min-width:801px){
+ .enhanced:not(.motion-reduced) .episodes-shell{display:grid;grid-template-columns:55% minmax(0,45%);align-items:start}
+ .enhanced:not(.motion-reduced) .episode-theatre{position:sticky;top:0;height:100svh;min-height:580px;padding:36px 32px;perspective:1400px}
+ .enhanced:not(.motion-reduced) .episode-theatre h2{position:relative;z-index:7;font-size:clamp(30px,3.4vw,52px);padding-left:14px}
+ .enhanced:not(.motion-reduced) .story-jumps{position:absolute;left:28px;top:22%;display:flex;flex-direction:column;gap:9px;margin:0}
+ .enhanced:not(.motion-reduced) .story-jump{font-size:22px;padding:6px 9px}
+ .enhanced:not(.motion-reduced) .book-stage{display:block;position:absolute;left:22%;top:19%;width:72%;aspect-ratio:1;perspective:1400px;transform-style:preserve-3d;isolation:isolate}
+ .book-leaf{position:absolute;inset:0;transform-origin:2% 50%;will-change:transform;backface-visibility:hidden;filter:drop-shadow(9px 16px 18px #0009);clip-path:var(--edge);background:var(--paper);padding:5px}
+ .book-leaf img{width:100%;height:100%;object-fit:cover;clip-path:var(--edge)}
+ .leaf-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0008,transparent 20%,transparent 80%,#0005);pointer-events:none;opacity:0}
+ .leaf-handle{position:absolute;right:-10px;bottom:-12px;width:76px;height:76px;border-radius:50%;background:var(--paper);color:var(--ink);box-shadow:-4px -7px 14px #0006;z-index:20;cursor:pointer;display:grid;place-items:center;transition:background .2s,transform .2s}
+ .leaf-handle svg{width:32px;transform:rotate(145deg);pointer-events:none}.leaf-handle:hover{background:var(--orange);transform:rotate(-8deg)}
+ .enhanced:not(.motion-reduced) .book-disc{display:block;position:absolute;width:73%;aspect-ratio:1;border-radius:50%;background:var(--orange);top:17%;right:0;transition:background .65s}
+ .enhanced:not(.motion-reduced) .theatre-hint{display:block;position:absolute;bottom:28px;left:20%;font-size:13px;color:var(--muted)}
+ .enhanced:not(.motion-reduced) .story-page{min-height:110svh;padding:105px clamp(30px,3vw,58px) 85px;display:flex;align-items:center;overflow:visible}
+ .enhanced:not(.motion-reduced) .story-page::before{content:'';position:absolute;top:-2px;bottom:-2px;left:-17px;width:22px;background:inherit;clip-path:polygon(90% 0,100% 0,100% 100%,70% 100%,45% 97%,70% 94%,30% 91%,65% 88%,35% 85%,68% 82%,33% 79%,65% 76%,40% 73%,70% 70%,35% 67%,60% 64%,30% 61%,68% 58%,45% 55%,70% 52%,35% 49%,65% 46%,30% 43%,68% 40%,45% 37%,70% 34%,35% 31%,65% 28%,30% 25%,65% 22%,40% 19%,68% 16%,30% 13%,65% 10%,35% 7%,70% 4%);z-index:1}
+ .enhanced:not(.motion-reduced) .story-mobile-cover{display:none}
+ .enhanced:not(.motion-reduced) .story-number{top:-95px;font-size:clamp(140px,16vw,230px)}
+}
+.v2 .authors{max-width:none;padding:110px var(--v2-gutter) 130px;position:relative;border-top:0}
+.v2 .authors>h2{font-size:clamp(64px,10vw,150px);font-weight:850;margin-bottom:70px}
+.v2 .author-grid{gap:clamp(30px,5vw,90px)}.v2 .portrait-wrap{width:100%;margin-bottom:38px;transform:rotate(-5deg)}.v2 .author-dina .portrait-wrap{transform:rotate(5deg);margin-top:75px}.v2 .author-anastasia .portrait-wrap{transform:rotate(-3deg);margin-top:18px}
+.v2 .author h3{font-size:30px;min-height:75px}.v2 .author-bio{font-size:18px;line-height:1.7}
+.v2 .closing{max-width:none;background:var(--orange);color:var(--ink);padding:90px var(--v2-gutter) 100px;border:0;gap:32px;position:relative}
+.v2 .closing-mark{color:var(--ink);font-size:22px}.v2 .closing-warning{font-size:clamp(40px,5.4vw,82px);font-weight:800;line-height:1.05;max-width:25ch}.v2 .closing-warning::first-line{color:var(--ink)}
+.v2 .closing .button{background:var(--ink);color:var(--paper)}.v2 .closing .button:hover{background:var(--paper);color:var(--ink)}.v2 .closing .button:focus-visible{box-shadow:inset 0 0 0 4px var(--paper),inset 0 0 0 7px var(--ink)}
+.v2 .site-footer{max-width:none;padding-inline:var(--v2-gutter)}
+@media(min-width:1700px){.v2 .hero{min-height:900px}.v2 .hero-bottom{top:500px}}
+@media(max-width:1100px) and (min-width:801px){.v2 .hero-bottom{top:325px;width:330px}.v2 .hero-subtitle{font-size:20px}.v2 .hero .button{font-size:18px}.story-page .synopsis{font-size:18px}.story-page h3{font-size:38px}.story-page .button{font-size:18px;padding-inline:20px}}
+@media(max-width:800px){
+ .v2 .site-header{height:80px;padding-inline:22px}.v2 .site-header nav{font-size:14px;gap:20px}
+ .v2 .hero{height:calc(100svh - 80px);min-height:770px;padding:25px 22px 0;overflow:hidden}
+ .v2 .hero-kicker{font-size:11px;letter-spacing:.04em;margin-bottom:22px;max-width:30em}
+ .v2 .hero h1{font-size:18.8vw;line-height:.9;letter-spacing:-.04em}
+ .v2 .hero h1 span{font-size:9.8vw;line-height:1.1;padding:5px 0 8px;white-space:nowrap}
+ .v2 .hero-bottom{position:relative;top:auto;width:100%;margin-top:23px;max-width:420px}
+ .v2 .hero-subtitle{font-size:18px;max-width:31ch;line-height:1.4}
+ .v2 .hero-actions{margin-top:21px;gap:15px;flex-direction:row;align-items:center;flex-wrap:wrap}
+ .v2 .hero .button{font-size:18px;padding:15px 21px;min-height:58px}
+ .v2 .hero .text-button{font-size:14px}
+ .hero-scene{width:125%;height:380px;aspect-ratio:auto;right:-12.5%;bottom:0;mask-image:linear-gradient(to right,transparent,#000 5%,#000 95%,transparent);transform-origin:30% 55%}
+ .hero-scene img{height:160%;width:auto;max-width:none;position:absolute;bottom:0;left:50%;transform:translateX(-45%);object-fit:unset;animation:none}
+ .scene-disc{width:78vw;right:5%;bottom:70px}.paper-rift{height:34px}.v2 .hero-down{bottom:43px;right:20px;font-size:11px;padding:6px 9px;gap:8px}.v2 .hero-down svg{width:11px;height:19px}
+ .v2 .about{padding:65px 22px 75px;grid-template-columns:1fr;gap:40px}.v2 .about h2{font-size:18px}.v2 .quote{font-size:32px;padding:28px 25px 33px}.v2 .about-body{font-size:19px;line-height:1.65}
+ .episode-theatre{padding:55px 22px 28px}.episode-theatre h2{font-size:52px}.story-jumps{justify-content:space-between;gap:6px}.story-jump{font-size:23px;padding:8px 14px}
+ .story-page{padding:45px 22px 65px;scroll-margin-top:0}.story-mobile-cover{margin-bottom:43px;width:92%}.story-page h3{font-size:39px}.story-page .synopsis{font-size:19px}.story-page .episode-meta{font-size:14px}.story-page .button{font-size:18px;padding:17px 23px}.story-number{top:-40px;font-size:125px}
+ .v2 .authors{padding:65px 22px 75px}.v2 .authors>h2{font-size:70px;margin-bottom:45px}.v2 .author-grid{gap:58px}.v2 .portrait-wrap{width:65%;max-width:300px}.v2 .author-dina .portrait-wrap,.v2 .author-anastasia .portrait-wrap{margin-top:0}.v2 .author h3{min-height:0;font-size:29px}.v2 .author-bio{font-size:18px;line-height:1.7}
+ .v2 .closing{padding:65px 22px 75px}.v2 .closing-warning{font-size:43px;line-height:1.12}.v2 .site-footer{padding-inline:22px}
+}
+@media(max-width:390px){.v2 .site-header nav{font-size:13px;gap:14px}.v2 .site-header{gap:15px}.v2 .hero-kicker{font-size:10px}.v2 .hero .button{font-size:17px}.v2 .hero .text-button{font-size:13px}.hero-scene{height:365px}.v2 .quote{font-size:29px}.story-page h3{font-size:35px}.v2 .closing-warning{font-size:38px}}
+@media(prefers-reduced-motion:reduce){.hero-scene,.hero h1,.paper-rift>div{transform:none!important}.hero h1 span,.hero-scene img{animation:none!important}.v2 .hero h1 span{clip-path:var(--edge)}.v2 .hero-scene img{transform:none}}
+@media(prefers-reduced-motion:reduce) and (max-width:800px){.v2 .hero-scene img{transform:translateX(-45%)}}
+@media(prefers-reduced-motion:reduce){.story-mobile-cover{transform:rotate(-3deg)!important}}
+/* Scroll is the authoring input on every screen; touch keeps its native pan. */
+@media(max-width:800px) and (prefers-reduced-motion:no-preference){
+ .enhanced .v2 .hero{height:165svh;min-height:0;padding:0;overflow:clip}
+ .enhanced .hero-viewport{display:block;position:sticky;top:0;height:100svh;min-height:690px;padding:25px 22px 0;overflow:hidden;isolation:isolate}
+ .enhanced .v2 .hero-copy{will-change:transform}
+ .enhanced .v2 .hero h1 span{animation:none}
+ .enhanced .hero-scene{height:46svh;min-height:325px;max-height:390px}
+ .enhanced .story-page{padding-top:0;overflow:clip}
+ .enhanced .story-cover-scene{display:block;position:relative;height:92svh;min-height:570px;padding-top:9svh}
+ .enhanced .story-mobile-cover{position:sticky;top:9svh;margin:0 auto;width:min(92%,56svh);max-width:530px;transform-origin:8% 50%;will-change:transform,opacity}
+ .enhanced .story-content{background:inherit;margin-top:-14svh;padding-top:32px}
+ .enhanced .story-content::before{content:'';position:absolute;left:-22px;right:-22px;top:-14px;height:28px;background:inherit;clip-path:var(--edge);z-index:-1}
+ .enhanced .story-number{z-index:0;opacity:.3;top:-20px}
+ .enhanced .story-content>:not(.story-number){position:relative;z-index:1}
+}
+@media(prefers-reduced-motion:reduce){.hero-copy,.story-mobile-cover{transform:none!important;opacity:1!important}}
+/* Real cinema photographs, a living mark, and one shared scroll deck. */
+.v2{--menu-h:86px}
+.v2 .site-header{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:1px solid #efe4ce24}
+.brand .live-logo{display:block;width:90px;height:55px;overflow:visible}
+html{scroll-padding-top:calc(var(--menu-h,86px) + 16px)}
+.episode-deck{display:contents}
+.title-ne{font:inherit;animation:ne-flicker 6.8s linear infinite}
+@keyframes ne-flicker{0%,58%,68%,78%,100%{opacity:1}61%,65%,72%,75%{opacity:.25}}
+.logo-pupil{animation:logo-glance 7.3s ease-in-out infinite}
+.pupil-1{animation-delay:-1.1s}.pupil-2{animation-delay:-2.4s}.pupil-3{animation-delay:-.6s}
+.logo-lid{transform:scaleY(0);animation:logo-blink 5.9s linear infinite}
+.lid-1{animation-delay:-1.1s}.lid-2{animation-delay:-2.4s}.lid-3{animation-delay:-.6s}
+@keyframes logo-glance{0%,18%,100%{transform:translate(0,0)}28%,42%{transform:translate(1.4px,.6px)}58%,73%{transform:translate(-1.1px,-.3px)}}
+@keyframes logo-blink{0%,90%,96%,100%{transform:scaleY(0)}93%,94%{transform:scaleY(1)}}
+.accent-paused,.accent-paused *{animation-play-state:paused!important}
+.film-collage{width:69%;height:62%;right:-1%;bottom:0;aspect-ratio:auto;mask-image:none;overflow:visible;transform-origin:50% 75%}
+.film-frame{position:absolute;margin:0;padding:6px 6px 0;background:var(--paper);clip-path:var(--edge);transform:rotate(var(--tilt));overflow:hidden}
+.film-collage .film-frame img{display:block;position:static;width:100%;height:calc(100% - 19px);max-width:100%;object-fit:cover;object-position:center;filter:grayscale(1) contrast(1.06);animation:none;transform:none}
+.film-frame figcaption{height:19px;padding-inline:3px;font-size:10px;line-height:19px;font-weight:650;color:var(--ink);white-space:nowrap;overflow:hidden}
+.frame-psycho{left:1%;top:3%;width:28%;height:65%;--tilt:-7deg;z-index:1}
+.frame-silence{left:28%;top:-2%;width:40%;height:31%;--tilt:4deg;z-index:2}
+.frame-lolita{right:-1%;top:2%;width:34%;height:41%;--tilt:8deg;z-index:3}
+.frame-killers{left:30%;top:24%;width:30%;height:68%;--tilt:-4deg;z-index:4}
+.frame-badlands{left:-3%;bottom:-2%;width:40%;height:37%;--tilt:5deg;z-index:5}
+.frame-menendez{right:-2%;bottom:-4%;width:46%;height:49%;--tilt:5deg;z-index:6}
+.frame-menendez img{object-position:30% center!important}
+.frame-credits{padding-block:25px;font-size:13px;line-height:1.6;color:var(--muted)}
+.frame-credits summary{cursor:pointer;width:fit-content}.frame-credits p{max-width:90ch;margin-top:15px}.frame-credits a{color:var(--paper)}
+/* The same leaf construction is shared by desktop and mobile. */
+.book-leaf{position:absolute;inset:0;transform-origin:2% 50%;will-change:transform;backface-visibility:hidden;clip-path:var(--edge);background:var(--paper);padding:5px}
+.book-leaf img{width:100%;height:100%;object-fit:cover;clip-path:var(--edge)}
+.leaf-shade{position:absolute;inset:0;background:linear-gradient(90deg,#0008,transparent 20%,transparent 80%,#0005);pointer-events:none;opacity:0}
+@media(max-width:800px){
+ .v2{--menu-h:80px}
+ .brand .live-logo{width:64px;height:42px}
+ .v2 .hero h1 .title-band{white-space:nowrap}
+ .film-collage{width:116%;right:-8%;height:43svh;min-height:325px;max-height:390px}
+ .film-frame{padding:4px 4px 0}.film-frame figcaption{font-size:8px;height:15px;line-height:15px}.film-collage .film-frame img{height:calc(100% - 15px)}
+ .v2 .hero .text-button{background:var(--ink);padding:5px}
+ .frame-credits{padding-inline:22px}
+ .mobile-deck-on .episode-deck{display:block;position:sticky;background:var(--ink);padding-bottom:0;overflow:clip;isolation:isolate}
+ .mobile-deck-on .episode-theatre{position:relative;height:calc(min(58vw,29svh) + 112px);padding:15px 22px 0;overflow:hidden}
+ .mobile-deck-on .episode-theatre h2{font-size:28px;line-height:1.1;position:relative;z-index:7}
+ .mobile-deck-on .story-jumps{position:absolute;top:12px;right:18px;gap:0;margin:0;z-index:7}
+ .mobile-deck-on .story-jump{font-size:16px;padding:6px 8px}
+ .mobile-deck-on .book-stage{display:block;position:absolute;top:68px;left:50%;width:min(58vw,29svh);aspect-ratio:1;perspective:1100px;transform:translateX(-50%);transform-style:preserve-3d;isolation:isolate}
+ .mobile-deck-on .book-disc{display:block;position:absolute;top:57px;left:50%;width:min(67vw,34svh);aspect-ratio:1;border-radius:50%;background:var(--orange);transform:translateX(-50%)}
+ .mobile-deck-on .leaf-handle{position:absolute;right:-15px;bottom:-9px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--paper);color:var(--ink);z-index:20;cursor:pointer}
+ .mobile-deck-on .leaf-handle svg{width:24px;height:24px;transform:rotate(145deg)}
+ .mobile-deck-on .story-page{display:none;padding:27px 22px 30px;overflow:visible;min-height:0}
+ .mobile-deck-on .story-page.is-active{display:block}
+ .mobile-deck-on .story-pages{background:var(--paper);position:relative}
+ .mobile-deck-on .story-page:nth-child(2n),.mobile-deck-on .story-page:nth-child(3){background:var(--paper)}
+ .mobile-deck-on .story-cover-scene{display:none}
+ .mobile-deck-on .story-content{margin:0;padding:0;background:transparent}
+ .mobile-deck-on .story-content::before{display:none}
+ .mobile-deck-on .story-number{display:none}
+ .mobile-deck-on .story-page .episode-meta{font-size:13px;margin-bottom:13px}
+ .mobile-deck-on .story-page h3{font-size:32px;margin-bottom:18px;line-height:1.05}
+ .mobile-deck-on .story-page .synopsis{font-size:17px;line-height:1.5}
+ .mobile-deck-on .story-page .button{font-size:17px;min-height:53px;margin-top:20px;padding:13px 20px}
+}
+@media(max-width:800px) and (prefers-reduced-motion:no-preference){
+ .enhanced .hero-viewport{top:var(--menu-h);height:calc(100svh - var(--menu-h));min-height:0}
+ .enhanced .hero-scene.film-collage{height:43svh;min-height:325px;max-height:390px}
+}
+@media(prefers-reduced-motion:reduce){.title-ne,.logo-pupil,.logo-lid{animation:none!important}.logo-lid{transform:scaleY(0)}.logo-pupil{transform:none}}
+@media(max-width:800px){
+ .mobile-deck-on .episode-theatre{height:calc(min(54vw,25svh) + 64px)}
+ .mobile-deck-on .episode-theatre h2{font-size:24px}
+ .mobile-deck-on .book-stage{top:50px;width:min(54vw,25svh)}
+ .mobile-deck-on .book-disc{top:44px;width:min(63vw,29svh)}
+ .mobile-deck-on .story-jump{font-size:15px;padding:6px 8px}
+ .mobile-deck-on.deck-pinned .story-jumps{position:fixed;top:var(--menu-h);left:0;right:0;justify-content:space-between;padding:3px 18px 5px 164px;background:var(--ink);z-index:111}
+ .mobile-deck-on.deck-pinned .episode-theatre h2{position:fixed;top:calc(var(--menu-h) + 8px);left:22px;z-index:112;margin:0;font-size:24px;line-height:25px}
+}
+@media(max-width:350px){.mobile-deck-on .story-jump{font-size:14px;padding-inline:6px}.mobile-deck-on.deck-pinned .story-jumps{padding-left:145px}.mobile-deck-on .episode-theatre h2{font-size:22px}}
+@media(max-width:800px){
+ .mobile-deck-on .story-pages{min-height:0;overflow:clip}
+ .mobile-deck-on .story-page{will-change:transform}
+}
+.site-header nav a{white-space:nowrap}
+@media(max-width:390px){.v2 .site-header{gap:10px}.v2 .site-header nav{gap:10px}}
+@media(min-width:801px){.enhanced:not(.motion-reduced) .episode-theatre{top:var(--menu-h);height:calc(100svh - var(--menu-h));min-height:540px}}

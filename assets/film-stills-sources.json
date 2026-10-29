@@ -1,0 +1,71 @@
+[
+  {
+    "file": "still-lolita.webp",
+    "image_url": "https://static.dw.com/image/44791521_605.jpg",
+    "source_page": "https://www.dw.com/ru/лолита-как-кубрик-работал-с-набоковым-фото/a-44811407",
+    "label": "Лолита (1962)",
+    "treatment": "format conversion and resize only; no generation"
+  },
+  {
+    "file": "still-killers.webp",
+    "image_url": "https://images.microcms-assets.io/assets/0b14285f4439472096dc5edecad7e15f/5abb7733d0624e21973abfe7a84b5fb1/41f2191d-5b9d-490a-b228-ef38ded3f6b4.jpg?fm=webp&w=766",
+    "source_page": "https://www.warnerbros.co.jp/home_entertainment/4l12vw-p-no8/",
+    "label": "Прирождённые убийцы (1994)",
+    "treatment": "format conversion and resize only; no generation"
+  },
+  {
+    "file": "still-menendez.webp",
+    "image_url": "https://media.cnn.com/api/v1/images/stellar/prod/cnne-1378917-menendez-brothers.jpg?c=original",
+    "source_page": "https://cnnespanol.cnn.com/2023/05/06/nuevas-pruebas-cadenas-perpetuas-hermanos-menendez",
+    "label": "Братья Менендес; архивное фото суда",
+    "treatment": "format conversion and resize only; no generation"
+  },
+  {
+    "file": "still-badlands.webp",
+    "image_url": "https://static.tcm.com/movie-images/24480.jpg",
+    "source_page": "https://www.tcm.com/watchtcm/titles/24480",
+    "label": "Пустоши (1973)",
+    "treatment": "format conversion and resize only; no generation"
+  },
+  {
+    "file": "still-psycho.webp",
+    "origin": "cover-01.webp — user supplied episode artwork",
+    "crop_normalized": [
+      0.035,
+      0.43,
+      0.475,
+      0.89
+    ],
+    "label": "Психо (1960)",
+    "treatment": "extract existing photograph; no generation"
+  },
+  {
+    "file": "still-silence.webp",
+    "origin": "cover-01.webp — user supplied episode artwork",
+    "crop_normalized": [
+      0.515,
+      0.463,
+      0.96,
+      0.669
+    ],
+    "label": "Молчание ягнят (1991)",
+    "treatment": "extract existing photograph; no generation"
+  },
+  {
+    "file": "cinema-social.webp",
+    "sources": [
+      "still-psycho.webp",
+      "still-silence.webp",
+      "still-lolita.webp",
+      "still-killers.webp",
+      "still-badlands.webp",
+      "still-menendez.webp"
+    ],
+    "treatment": "contact sheet of the six existing photographs, grayscale, crop and paper border; no generation"
+  },
+  {
+    "file": "logo-live.svg",
+    "origin": "logo.svg — supplied user logo",
+    "treatment": "original outline and pupil paths preserved; own eye-hole contours reused as animated eyelids"
+  }
+]
